@@ -1,0 +1,60 @@
+﻿<!DOCTYPE HTML>
+<head>
+	<meta charest="UTF-8">
+	<title>Welcome!</title>
+	<style type="text/css">
+	body {
+		background-color:#AAAAFF;
+	}
+	table {
+		border-style:groove;
+		font-size:18px;
+	}
+	tr {
+		background-color:#AAAAFF;
+	}
+	tr:hover {
+		background-color:#FFFFAA;
+	}
+	</style>
+	<script type="text/javascript">
+		function printf() {
+			if(document.getElementById("Name").value=="" || document.getElementById("StuID").value=="" || document.getElementById("Phone").value=="")
+				alert("有欄位沒有輸入!");
+			else
+			{
+				var num = document.getElementById("tab").rows.length;
+				var Tr = document.getElementById("tab").insertRow(num);
+				Td = Tr.insertCell(Tr.cells.length);
+				Td.innerHTML = document.getElementById("Name").value;
+				Td = Tr.insertCell(Tr.cells.length);
+				Td.innerHTML = document.getElementById("StuID").value;
+				Td = Tr.insertCell(Tr.cells.length);
+				Td.innerHTML = document.getElementById("Phone").value;
+				document.getElementById("Name").value = "";
+				document.getElementById("StuID").value = "";
+				document.getElementById("Phone").value = "";
+			}
+		}
+	</script>
+</head>
+<body>
+	<Img id="Img1" name="Img1" Src="/welcome.jpg"><P>
+	<h2>請輸入以下資訊：</h2>
+	<p>姓名：<input type="text" id="Name"></p>
+	<p>學號：<input type="text" id="StuID"></p>
+	<p>電話：<input type="text" id="Phone"></p>
+	<input type="button" value="新 增 至 表 格" style="width:200px;height:30px;font-size:16px" onclick="printf()"><br><br><br>
+	<table rules="all" id="tab" width="500">
+		<tr>
+			<th colspan=3 span style="font-size:20px">通 訊 錄</th>
+		</tr>
+		<tr>
+			<td align="center" valign="center" span style="font-size:20px">姓名</td>
+			<td align="center" valign="center" span style="font-size:20px">學號</td>
+			<td align="center" valign="center" span style="font-size:20px">電話</td>
+		</tr>
+	</table>
+</body>
+
+</html>
